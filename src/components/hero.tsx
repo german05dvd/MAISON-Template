@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroMain from "@/assets/hero-main.jpg";
 import heroSecondary from "@/assets/hero-secondary.jpg";
@@ -23,24 +24,24 @@ export function Hero() {
           y el tiempo, ornamento.
         </p>
 
-        <a
-          href="/colecciones/havana"
-          className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-foreground"
+        <Link
+          to="/colecciones"
+          className="group mt-10 flex w-fit items-center gap-3 py-3 text-[11px] uppercase tracking-[0.22em] text-foreground transition-opacity hover:opacity-50"
         >
-          <span className="border-b border-foreground/30 pb-1 transition-colors duration-300 group-hover:border-foreground">
+          <span className="border-b border-foreground">
             Descubre la Colección
           </span>
           <ArrowRight
             strokeWidth={1.5}
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Right composition — editorial collage (60%) */}
       <div className="relative order-2 md:col-span-7">
         <div className="relative mx-auto aspect-[3/4] w-full max-w-sm sm:max-w-md md:max-w-none">
-          {/* Main image — larger, slightly advanced */}
+          {/* Main image */}
           <div className="relative z-10 aspect-[3/4] w-[78%] overflow-hidden md:-mt-6">
             <img
               src={heroMain}
@@ -53,7 +54,7 @@ export function Hero() {
             />
           </div>
 
-          {/* Secondary image — smaller, vertically offset */}
+          {/* Secondary image */}
           <div className="absolute right-0 top-[28%] z-20 aspect-[3/4] w-[44%] overflow-hidden shadow-2xl">
             <img
               src={heroSecondary}
